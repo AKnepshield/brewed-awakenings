@@ -1,0 +1,22 @@
+Table Employee {
+    id int [pk]
+    name string
+    email string
+    hourlyRate int
+}
+
+Table Order {
+    id int [pk]
+    productId int [fk]
+    employeeId int [fk]
+    timestamp int
+}
+
+Table Product {
+    id int [pk]
+    name string
+    price int
+}
+
+Ref: Order.employeeId < Employee.id
+Ref: Order.productId < Product.id
